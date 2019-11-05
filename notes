@@ -6,7 +6,7 @@ MODELS
 has_many users through reviews
 attributes: author_id, title, rating, number of ratings, pages, genre, year published, date read
 
-
+-----------------------------
 3. User has_many books through reviews
 attributes: name, email, pw
 
