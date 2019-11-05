@@ -1,0 +1,23 @@
+MODELS
+1. Author has_many books
+- attributes: name, number of books written
+
+2. Books belong_to author
+has_many users through reviews
+attributes: author_id, title, rating, number of ratings, pages, genre, year published, date read
+
+
+3. User has_many books through reviews
+attributes: name, email, pw
+
+4. Reviews
+attributes: content, user_id, book_id
+
+PAGES
+-list of all books in system... what have others said?
+- author - index - authors you have read with books they written plus links
+  - show - specific author + books author wrote
+  - edit + delete functionality
+
+- books - list of books, read
+  - filters on when you read them
