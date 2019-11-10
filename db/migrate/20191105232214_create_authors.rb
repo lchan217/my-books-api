@@ -2,9 +2,7 @@ class CreateAuthors < ActiveRecord::Migration[5.2]
   def change
     create_table :authors do |t|
       t.string :name
-      t.string :num_books
-      t.string :integer
-
+      t.integer :num_books
       t.timestamps
     end
   end

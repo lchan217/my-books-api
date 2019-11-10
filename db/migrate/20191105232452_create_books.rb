@@ -3,12 +3,11 @@ class CreateBooks < ActiveRecord::Migration[5.2]
     create_table :books do |t|
       t.integer :author_id
       t.string :title
-      t.string :rating
-      t.string :integer
+      t.integer :rating
       t.integer :num_ratings
-      t.string :pages
-      t.string :integer
+      t.integer :pages
       t.string :genre
+      t.text :review
 
       t.timestamps
     end
