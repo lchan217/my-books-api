@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   resources :users
   scope '/api' do
     get :books, to: 'book#index'
-    get :books, to: 'book#create'
+    post :books, to: 'book#create'
     get :authors, to: 'author#index'
     post :authors, to: 'author#create'
+    get :users, to: 'user#index'
+    post :users, to: 'user#create'
   end
 end
