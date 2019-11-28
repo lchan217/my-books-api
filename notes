@@ -3,11 +3,11 @@ MODELS
 - attributes: name, number of books written
 
 2. Books belong_to author
-has_many users through  userbooks join table
+belong_to user 
 attributes: author_id, title, rating, number of ratings, pages, genre, year published, date read, review
 
 -----------------------------
-3. User has_many books through Userbooks join table
+3. User has_many books
 attributes: name, email, pw
 
 
@@ -19,3 +19,7 @@ PAGES
 
 - books - list of books, read
   - filters on when you read them
+
+TO DO
+- add bcrypt gem, to model, & column in db
+- pw validations
