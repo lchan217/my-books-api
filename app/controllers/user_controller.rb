@@ -3,6 +3,10 @@ class UserController < ApplicationController
         @users = User.all
         render json: @users, status: 201
     end
+
+    def new 
+        @user = User.new 
+    end 
     
     def create
         user = User.create(user_params)
