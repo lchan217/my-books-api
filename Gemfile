@@ -40,6 +40,9 @@ gem 'uglifier', '>= 2.7.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+#for authentication 
+gem 'knock'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
