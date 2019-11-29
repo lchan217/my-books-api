@@ -1,6 +1,8 @@
 class BookController < ApplicationController
   def index
-    @books = Book.all
+    user = User.find(session[:user_id])
+    all_books = user.books.uniq
+    @books = all_books.sort_by {|book| book.title.downcase}
     render json: @books, status: 201
   end
 
