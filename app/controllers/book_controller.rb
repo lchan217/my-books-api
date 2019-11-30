@@ -3,8 +3,8 @@ class BookController < ApplicationController
   def index
     # user = User.find(session[:user_id])
     if current_user
-      all_books = Book.all
-      @books = all_books.sort_by {|book| book.title.downcase}
+      users_books = current_user.books
+      @books = users_books.sort_by {|book| book.title.downcase}
       render json: @books, status: 201
     end
   end
