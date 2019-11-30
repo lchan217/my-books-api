@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::API
+    include Knock::Authenticable
+    
     # helper_method :current_user, :logged_in?
 
     # #helper methods

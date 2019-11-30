@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     post :authors, to: 'author#create'
     get :users, to: 'user#index'
     post :users, to: 'user#create'
-    post 'user_token' => 'user_token#create'
+    post :user_token, to: 'user_token#create'
   end
 end
