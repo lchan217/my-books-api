@@ -1,9 +1,12 @@
 class BookController < ApplicationController
+  before_action :authenticate_user #make sure JSON web token is valid
   def index
-    user = User.find(session[:user_id])
-    all_books = user.books.uniq
-    @books = all_books.sort_by {|book| book.title.downcase}
-    render json: @books, status: 201
+    # user = User.find(session[:user_id])
+    if current_user
+      all_books = Book.all
+      @books = all_books.sort_by {|book| book.title.downcase}
+      render json: @books, status: 201
+    end
   end
 
   def create
