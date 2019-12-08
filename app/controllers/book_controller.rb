@@ -12,8 +12,9 @@ class BookController < ApplicationController
     if current_user
       id = current_user.id
       book = Book.new(user_id: id)
-      book.update(book_params)
-      render json: book
+      if book.update(book_params) 
+        render json: book
+      end
     end
   end
 
