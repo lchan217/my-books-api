@@ -1,16 +1,20 @@
 class BookController < ApplicationController
   before_action :authenticate_user #make sure JSON web token is valid
-
+  # before_action :authenticate_user!, except: [:new, :create]
   def index
-    # if current_user
+    if current_user
       @books = current_user.books
       render json: @books, status: 201
-    # end
+    end
   end
 
   def create
-    book = Book.create(book_params)
-    render json: book
+    if current_user
+      id = current_user.id
+      book = Book.new(user_id: id)
+      book.update(book_params)
+      render json: book
+    end
   end
 
   def book_params
