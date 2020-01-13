@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get :books, to: 'book#index'
     post :books, to: 'book#create'
     put :books, to: 'book#update'
+    delete :books, to: 'book#destroy'
 
     get :authors, to: 'author#index'
     post :authors, to: 'author#create'

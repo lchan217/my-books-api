@@ -26,6 +26,10 @@ class BookController < ApplicationController
     byebug
   end 
 
+  def destroy
+    Book.find( params[:_json]).destroy
+  end 
+
   def book_params
      params.require(:book).permit(:author_id, :author, :user_id, :title, :rating, :num_ratings, :pages, :genres, :img, :review)
   end
