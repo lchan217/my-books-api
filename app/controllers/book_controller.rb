@@ -19,11 +19,10 @@ class BookController < ApplicationController
   end
 
   def update 
-    # book = Book.find(params[])
-    # if book.update(book_params)
-    #   render json: book
-    # end
-    byebug
+    book = Book.find(params[:id])
+    if book.update(book_params)
+      render json: book
+    end
   end 
 
   def destroy
